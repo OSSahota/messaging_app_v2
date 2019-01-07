@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'data_mapper', '1.2.0'
+gem 'dm-postgres-adapter'
 gem 'pry', '~> 0.12.2'
 gem 'shotgun', '~> 0.9.2'
 gem 'sinatra', '~> 2.0'

@@ -15,7 +15,7 @@
       <div>
         <a href="/messages/<%= message.id %>">
           <%= message.text.slice(0...20) %></a> --
-          <%= message.time %>
+          <%= message.created_at %>
       </div>
     <% end %>
   </body>

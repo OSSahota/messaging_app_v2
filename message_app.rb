@@ -1,30 +1,26 @@
 require 'sinatra/base'
 require './lib/message'
+require './config/datamapper_setup'
+require 'pry'
 
 class MessageBoard < Sinatra::Base
-  enable :sessions
-  set :session_secret, 'super secret'
 
+  # show all messages
   get '/' do
-    session.clear
-    redirect '/log'
+    @messages = Message.all
+    erb(:index)
   end
 
-  get '/log' do
-    session[:messages] ||= []
-    @messages = session[:messages]
-    erb :index
-  end
-
-  post '/message' do
-    session[:messages] << Message.new(params[:message])
-    redirect '/log'
-  end
-
+  # show a specific message based off the id
   get '/messages/:id' do
-    @messages = session[:messages]
-    @id = params[:id]
+    @message = Message.get(params[:id])
     erb(:messages)
+  end
+
+  # create a message
+  post '/message' do
+    Message.create(text: params[:message])
+    redirect '/'
   end
 
   run! if app_file == $0

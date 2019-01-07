@@ -1,5 +1,1 @@
-<% @messages.each do |message| %>
-  <% if message.id == @id.to_i %>
-    <%= message.text %>
-  <% end %>
-<% end %>
+<%= @message.created_at %>: <span><%= @message.text %></span>
