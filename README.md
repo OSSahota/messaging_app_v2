@@ -4,7 +4,7 @@ Messaging App Challenge
 ## Makers Academy - Week 4 Challenge
 
 A web app that lets the user enter a message and submit it. The user should then see a history of messages already submitted in reverse chronological order with attached timestamps.
-
+<!--
 ```
 As a user
 So that I can share my thoughts
@@ -37,4 +37,4 @@ I would like to see the messages with the newest ones on the top
 
 1. Enter your message in the prompted field and click 'Submit'
 2. Repeat as neccessary
-3. Bask in the history of your previous ramblings
+3. Bask in the history of your previous ramblings -->
