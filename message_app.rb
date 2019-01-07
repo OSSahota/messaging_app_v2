@@ -5,6 +5,8 @@ require 'pry'
 
 class MessageBoard < Sinatra::Base
 
+  ENV['RACK_ENV'] ||= 'development'
+
   # show all messages
   get '/' do
     @messages = Message.all

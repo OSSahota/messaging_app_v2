@@ -1,7 +1,6 @@
 require 'data_mapper'
 
-DataMapper.setup(:default,"postgres://localhost/development")
+DataMapper.setup(:default,"postgres://localhost/message_app_#{ENV['RACK_ENV']}")
 DataMapper.finalize
 
 DataMapper.auto_upgrade!
-# DataMapper.auto_migrate!

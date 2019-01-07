@@ -14,9 +14,4 @@ describe Message do
     expect(created_at).to eq time_double
   end
 
-  # Seems like a redundant test as id will always be unique and
-  # incremental.
-  # it 'second message saves its id as 1' do
-  #   expect(message.id).to eq 1
-  # end
 end

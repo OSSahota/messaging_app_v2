@@ -13,7 +13,7 @@
 # it.
 #
 
-# Getting testing infrastructure setup ch.
+# Getting infrastructure setup.
 # Including what's needed to prepare Capybara & to get Capybara to test our app.
 #
 # set RACK_ENV to test
@@ -28,8 +28,8 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
-
-# tell Capybara about our app class: Battle
+#
+# tell Capybara about our app class: MessageBoard
 Capybara.app = MessageBoard
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
