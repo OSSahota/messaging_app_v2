@@ -7,7 +7,7 @@ feature 'Displaying the homepage' do
 
   scenario 'it displays a form' do
     find_field('Type message here').value
-    find_button('Submit')#.click - including .click method adds a row to the
+    find_button('Submit') # .click - including .click method adds a row to the
     # db when running RSpec with a blank text value.
   end
 end
