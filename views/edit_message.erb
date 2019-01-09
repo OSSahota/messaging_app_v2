@@ -1,0 +1,13 @@
+web_helper message
+<br>
+<%= @message.id %>
+<br>
+<%= @message.created_at %>: <span><%= @message.text %></span>
+<br>
+
+<form action="/message/<%= @message.id %>" method="post">
+  <input name="_method" type="hidden" value="put">
+  <!-- <input name="text" name="message[text] id="text"> -->
+  <textarea name="message[text]" id="text" rows="3" cols="40"><%= @message.text %></textarea>
+  <input type="submit" value="Update">
+</form>

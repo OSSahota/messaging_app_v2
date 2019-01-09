@@ -4,6 +4,7 @@ require './config/datamapper_setup'
 require 'pry'
 
 class MessageBoard < Sinatra::Base
+  enable :method_override
 
   ENV['RACK_ENV'] ||= 'development'
 
@@ -23,6 +24,24 @@ class MessageBoard < Sinatra::Base
   post '/message' do
     Message.create(text: params[:message])
     redirect '/'
+  end
+
+  get '/message/:id/edit' do
+    @message = Message.get(params[:id])
+    erb(:edit_message)
+  end
+
+  put '/message/:id' do
+    @message = Message.get(params[:id])
+    @message.update(params[:message])
+    redirect '/'
+  end
+
+  delete '/message/:id' do
+    @message = Message.get(params[:id])
+    @message.destroy
+    redirect '/'
+    # Message.get(params[:id]).destroy # more direct way?
   end
 
   run! if app_file == $0
